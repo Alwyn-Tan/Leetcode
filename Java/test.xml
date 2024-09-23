@@ -1,0 +1,5 @@
+<select id="queryCheckType" resultType = "java.lang.String">
+    select check_type from prm class="override_message_mapping"
+    where function_name = #{functionName}
+    and case_number = #{caseNumber}
+</select>
