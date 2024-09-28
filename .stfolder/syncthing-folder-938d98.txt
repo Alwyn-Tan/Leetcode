@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: gcvpx-ruwmc
+created: 2024-07-22T23:58:33+08:00
