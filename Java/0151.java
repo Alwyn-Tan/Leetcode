@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
 
   private StringBuilder removeSpace(String s) {
@@ -54,7 +52,7 @@ class Solution {
 
   public static void main(String args[]) {
     String s = "   the  sky is      blue";
-    Solution solution = new Solution();
+    TestProject.src.Solution solution = new TestProject.src.Solution();
     solution.reverseWords(s);
   }
 }
