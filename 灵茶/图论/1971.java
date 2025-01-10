@@ -1,25 +1,43 @@
+import java.util.Arrays;
+
 class Solution {
-    private int[] p;
+
+    private int[] S;
 
     public boolean validPath(int n, int[][] edges, int source, int destination) {
-        p = new int[n];
+        S = new int[n];
 
-        for (int i = 0; i < n; i++) {
-            p[i] = i;
-        }
+        Arrays.fill(S, -1);
 
         for (int[] e : edges) {
-            p[find(e[0])] = find(e[1]);
+            union(e[0], e[1]);
         }
 
         return find(source) == find(destination);
 
     }
 
-    private int find(int x) {
-        if (p[x] != x) {
-            p[x] = find(p[x]);
+    private void union(int x, int y) {
+        x = find(x);
+        y = find(y);
+
+        if (x == y) {
+            return;
         }
-        return p[x];
+
+        S[x] = y;
+    }
+
+    private int find(int x) {
+        int root = x;
+        while (S[root] >= 0) {
+            root = S[root];
+        }
+        while (root != x) {
+            int temp = S[x];
+            S[x] = root;
+            x = temp;
+        }
+        return root;
     }
 }
